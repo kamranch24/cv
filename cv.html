@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamran Ahmed - Platform Engineer</title>
+    <title>Kamran Ahmed – Platform Engineer</title>
     <style>
         * {
             margin: 0;
@@ -12,288 +12,286 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --dark: #1a2533;
+            --accent: #2563eb;
+            --accent-light: #dbeafe;
+            --muted: #64748b;
+            --text: #1e293b;
+            --border: #e2e8f0;
+        }
+
         body {
-            font-family: 'Calibri', 'Arial', sans-serif;
-            line-height: 1.4;
-            color: #333;
-            max-width: 850px;
+            font-family: 'Calibri', 'Segoe UI', 'Arial', sans-serif;
+            line-height: 1.45;
+            color: var(--text);
+            max-width: 860px;
             margin: 0 auto;
-            padding: 20px 30px;
+            padding: 24px 32px;
             background: white;
+            font-size: 10.5px;
         }
 
-        /* Print optimization */
         @media print {
-            body {
-                padding: 15px 25px;
-                line-height: 1.35;
-            }
-
-            .no-print {
-                display: none;
-            }
+            body { padding: 0 24px; font-size: 10px; line-height: 1.38; }
+            .no-print { display: none; }
+            .impact-grid { gap: 6px; }
         }
 
-        /* Page setup */
-        @page {
-            size: A4;
-            margin: 0.8cm 1cm;
-        }
+        @page { size: A4; margin: 0.7cm 0.9cm; }
 
-        /* Header */
+        /* ── Header ── */
         header {
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            gap: 8px;
             margin-bottom: 12px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #2c3e50;
+            border-bottom: 2.5px solid var(--accent);
         }
 
-        h1 {
-            font-size: 24px;
-            color: #2c3e50;
-            margin-bottom: 3px;
+        .header-left h1 {
+            font-size: 22px;
+            color: var(--dark);
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            margin-bottom: 2px;
+        }
+
+        .header-left .tagline {
+            font-size: 11.5px;
+            color: var(--accent);
             font-weight: 700;
+            margin-bottom: 4px;
         }
 
-        .title {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 5px;
-            font-weight: 600;
+        .header-left .sub-tagline {
+            font-size: 9.5px;
+            color: var(--muted);
+            font-weight: 500;
         }
 
-        .contact {
-            font-size: 10px;
-            color: #666;
+        .header-right {
+            text-align: right;
+            font-size: 9.5px;
+            color: var(--muted);
+            line-height: 1.75;
         }
 
-        .contact a {
-            color: #2980b9;
-            text-decoration: none;
-        }
+        .header-right a { color: var(--accent); text-decoration: none; }
 
-        /* Section headings */
+        /* ── Section Headings ── */
         h2 {
-            font-size: 12px;
-            color: #2c3e50;
+            font-size: 10px;
+            color: var(--dark);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 12px 0 6px 0;
+            letter-spacing: 0.8px;
+            margin: 13px 0 6px 0;
             padding-bottom: 3px;
-            border-bottom: 1.5px solid #3498db;
-            font-weight: 700;
+            border-bottom: 1.5px solid var(--accent);
+            font-weight: 800;
         }
 
-        /* Professional Summary */
+        /* ── Summary ── */
         .summary {
             font-size: 10px;
-            line-height: 1.45;
-            margin-bottom: 6px;
+            line-height: 1.5;
+            color: var(--text);
             text-align: justify;
+            margin-bottom: 4px;
         }
 
-        /* Skills */
+        .summary strong { color: var(--dark); }
+
+        /* ── Skills ── */
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2px 15px;
-            font-size: 10px;
-            margin-bottom: 6px;
+            gap: 3px 18px;
+            font-size: 9.5px;
+            margin-bottom: 4px;
         }
 
-        .skill-item {
-            display: flex;
-        }
+        .skill-item { display: flex; gap: 4px; }
 
         .skill-category {
-            font-weight: 600;
-            color: #2c3e50;
+            font-weight: 700;
+            color: var(--dark);
             min-width: 130px;
+            flex-shrink: 0;
         }
 
-        .skill-list {
-            color: #555;
-        }
+        .skill-list { color: var(--muted); }
 
-        /* Experience */
-        .job {
-            margin-bottom: 10px;
-        }
+        /* ── Experience ── */
+        .job { margin-bottom: 11px; }
 
         .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 3px;
+            margin-bottom: 1px;
         }
 
         .job-title {
             font-size: 11px;
-            font-weight: 700;
-            color: #2c3e50;
+            font-weight: 800;
+            color: var(--dark);
         }
 
         .job-date {
             font-size: 9px;
-            color: #666;
+            color: var(--muted);
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .company {
-            font-size: 10px;
-            color: #555;
-            font-style: italic;
-            margin-bottom: 3px;
+            font-size: 9.5px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 4px;
         }
 
-        .job ul {
-            margin-left: 16px;
-            font-size: 10px;
-        }
+        .job ul { margin-left: 14px; font-size: 9.5px; }
 
         .job li {
             margin-bottom: 3px;
-            line-height: 1.4;
+            line-height: 1.45;
             text-align: justify;
+            color: var(--text);
         }
 
-        /* Contract roles section */
-        .contract-roles {
-            margin-bottom: 10px;
-        }
+        .job li strong { color: var(--dark); }
+
+        /* ── Contract Roles ── */
+        .contract-roles { margin-bottom: 10px; }
 
         .contract-intro {
-            font-size: 10px;
+            font-size: 9.5px;
+            color: var(--muted);
             font-style: italic;
-            color: #555;
-            margin-bottom: 4px;
-            text-align: justify;
+            margin-bottom: 5px;
         }
 
         .contract-role {
-            margin-bottom: 6px;
-            margin-left: 8px;
+            margin-bottom: 5px;
+            padding-left: 8px;
+            border-left: 2px solid var(--border);
         }
 
         .contract-role-header {
-            font-size: 10px;
+            font-size: 9.5px;
             font-weight: 700;
-            color: #2c3e50;
+            color: var(--dark);
             margin-bottom: 2px;
         }
 
-        .contract-role ul {
-            margin-left: 16px;
-            font-size: 10px;
-        }
+        .contract-role ul { margin-left: 14px; font-size: 9.5px; }
 
         .contract-role li {
             margin-bottom: 2px;
             text-align: justify;
             line-height: 1.4;
+            color: var(--text);
         }
 
-        /* Education & Certifications */
-        .education-item,
-        .cert-item {
-            margin-bottom: 6px;
-        }
-
+        /* ── Education ── */
         .education-header {
             display: flex;
             justify-content: space-between;
-            font-size: 10px;
+            font-size: 9.5px;
+            margin-bottom: 1px;
         }
 
-        .degree {
-            font-weight: 700;
-            color: #2c3e50;
+        .degree { font-weight: 700; color: var(--dark); }
+        .institution { font-size: 9.5px; color: var(--muted); }
+
+        /* ── Certifications ── */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 18px;
+            font-size: 9.5px;
         }
 
-        .institution {
-            font-size: 10px;
-            color: #555;
-        }
+        .cert-earned { color: var(--dark); font-weight: 600; }
+        .cert-earned::before { content: "✓ "; color: #16a34a; font-weight: 700; }
 
-        .cert-list {
-            margin-left: 16px;
-            font-size: 10px;
-        }
+        .cert-progress { color: var(--muted); }
+        .cert-progress::before { content: "◷ "; color: var(--accent); }
 
-        .cert-list li {
-            margin-bottom: 2px;
-            text-align: justify;
-            line-height: 1.4;
-        }
+        /* ── Languages ── */
+        .languages { font-size: 9.5px; color: var(--text); }
 
-        /* Languages */
-        .languages {
-            font-size: 10px;
-            text-align: justify;
-        }
-
-        /* Page break control */
-        .no-break {
-            page-break-inside: avoid;
-        }
+        .no-break { page-break-inside: avoid; }
     </style>
 </head>
 
 <body>
+
+    <!-- ══ HEADER ══ -->
     <header>
-        <h1>Kamran Ahmed</h1>
-        <div class="title">Platform Engineer | Cloud, DevOps & GenAI Enablement</div>
-        <div class="contact">
-            📅 Date of Birth: 23.07.1995 • 🌍 Nationality: Pakistani • 🏛️ Residence Permit: Permanent (Germany)
+        <div class="header-left">
+            <h1>Kamran Ahmed</h1>
+            <div class="tagline">Platform Engineer &nbsp;·&nbsp; Cloud Infrastructure &nbsp;·&nbsp; DevOps &amp; GenAI Enablement</div>
+            <div class="sub-tagline">AWS &nbsp;|&nbsp; Terraform &nbsp;|&nbsp; GitLab CI/CD &nbsp;|&nbsp; Bedrock Agents &nbsp;|&nbsp; Kubernetes &nbsp;|&nbsp; Python &nbsp;|&nbsp; Golang</div>
         </div>
-        <div class="contact">
-            ✉️ <a href="mailto:ahmed.kamran.ch@gmail.com">ahmed.kamran.ch@gmail.com</a> • 📱 +49 178 6218137 • 📍
-            Bamberg, 96052, Germany • 💼 <a
-                href="https://linkedin.com/in/kamran-ahmed-ch">linkedin.com/in/kamran-ahmed-ch</a>
-        </div>
-        <div class="contact">
-            📌 Available for: On-site • Hybrid • Remote • Willing to relocate • Notice Period: 3 months
+        <div class="header-right">
+            ✉ <a href="mailto:ahmed.kamran.ch@gmail.com">ahmed.kamran.ch@gmail.com</a><br>
+            📱 +49 178 6218137<br>
+            📍 Bamberg, Germany &nbsp;·&nbsp; Permanent Residency<br>
+            💼 <a href="https://linkedin.com/in/kamran-ahmed-ch">linkedin.com/in/kamran-ahmed-ch</a><br>
+            🕐 Notice: 3 months &nbsp;|&nbsp; On-site / Hybrid / Remote
         </div>
     </header>
 
+    <!-- ══ SUMMARY ══ -->
     <section>
-        <h2>Professional Summary</h2>
+        <h2>About</h2>
         <p class="summary">
-            <strong>Platform Engineer</strong> with <strong>4+ years</strong> building secure, scalable cloud
-            platforms on <strong>AWS/Azure</strong>. Hands-on expert in <strong>Terraform, GitLab CI/CD, Kubernetes,
-                Python, and Golang</strong>, with a strong record of reducing deployment time by <strong>70%</strong>,
-            saving <strong>100+ developer hours</strong> monthly, and lowering infrastructure overhead by
-            <strong>40%</strong>. Specialised in <strong>Infrastructure as Code</strong>, serverless and
-            event-driven systems, <strong>GenAI enablement with AWS Bedrock Agents</strong>, data governance
-            (Lake Formation, Glue, Athena), cloud security, and observability. Known for end-to-end platform
-            ownership, reusable engineering standards, and enabling teams to ship reliably at enterprise scale.
+            Platform engineer with <strong>4+ years</strong> of hands-on experience building and maintaining
+            cloud infrastructure for enterprise ML/AI and data platforms. At Brose I have owned delivery of
+            an <strong>ML/AI Data Analytics Platform</strong> across <strong>5 AWS accounts and 12+
+            teams</strong>, contributing to architectural decisions, building shared standards, and working
+            daily with stakeholders across <strong>Germany, India, and the US</strong>. My approach is
+            <strong>platform-as-product</strong>: golden-path delivery, self-service pipelines, and
+            guardrails that remove friction instead of adding process. I'm comfortable writing a
+            <strong>Terraform module, a Bedrock Agent configuration, or a GitLab CI template</strong> and
+            seeing it through to production. Background in cloud security, data governance
+            (Lake Formation, Glue, Athena), MLOps, observability, and <strong>Kubernetes</strong>
+            workloads on AWS and Azure.
         </p>
     </section>
 
+    <!-- ══ SKILLS ══ -->
     <section>
         <h2>Technical Skills</h2>
         <div class="skills-grid">
             <div class="skill-item">
-                <span class="skill-category">AWS Services:</span>
-                <span class="skill-list">Lambda, S3, ECR, Step Functions, Bedrock,
-                    SageMaker, Glue, Lake Formation, Athena</span>
+                <span class="skill-category">Cloud &amp; Platform:</span>
+                <span class="skill-list">AWS (multi-account), Azure, Lambda, S3, ECR, Step Functions, VPC, IAM</span>
             </div>
             <div class="skill-item">
-                <span class="skill-category">IaC & Automation:</span>
-                <span class="skill-list">Terraform, Ansible, Python, Golang, Bash</span>
+                <span class="skill-category">IaC &amp; Automation:</span>
+                <span class="skill-list">Terraform, Terragrunt, Ansible, Python, Golang, Bash, semantic-release</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-category">GenAI &amp; ML:</span>
+                <span class="skill-list">AWS Bedrock Agents, Knowledge Bases, S3 Vectors, SageMaker, Glue, Athena</span>
             </div>
             <div class="skill-item">
                 <span class="skill-category">CI/CD:</span>
-                <span class="skill-list">GitLab CI/CD, Jenkins, GitHub Actions, semantic-release</span>
+                <span class="skill-list">GitLab CI/CD, GitHub Actions, Jenkins, ArgoCD</span>
             </div>
             <div class="skill-item">
-                <span class="skill-category">Containers:</span>
-                <span class="skill-list">Kubernetes, Docker, ArgoCD</span>
+                <span class="skill-category">Containers &amp; K8s:</span>
+                <span class="skill-list">Kubernetes, Docker, Helm, ArgoCD</span>
             </div>
             <div class="skill-item">
-                <span class="skill-category">Security & Governance:</span>
-                <span class="skill-list">IAM, VPC, AWS Access Analyzer, CloudTrail, Checkov,
-                    least-privilege design</span>
+                <span class="skill-category">Security &amp; Governance:</span>
+                <span class="skill-list">Lake Formation, Access Analyzer, CloudTrail, Checkov, Secrets Manager</span>
             </div>
             <div class="skill-item">
                 <span class="skill-category">Observability:</span>
@@ -306,122 +304,138 @@
         </div>
     </section>
 
+    <!-- ══ EXPERIENCE ══ -->
     <section>
-        <h2>Work Experience</h2>
+        <h2>Experience</h2>
 
         <div class="job no-break">
             <div class="job-header">
-                <span class="job-title">Platform & DevOps Engineer</span>
+                <span class="job-title">Platform &amp; DevOps Engineer</span>
                 <span class="job-date">Apr 2023 – Present</span>
             </div>
-            <div class="company">Brose Fahrzeugteile, Bamberg, Germany</div>
+            <div class="company">Brose Fahrzeugteile SE &amp; Co. KG &nbsp;·&nbsp; Bamberg, Germany</div>
             <ul>
-                <li>Owned end-to-end cloud infrastructure for a large-scale <strong>ML/AI Data Analytics Platform</strong>
-                    by architecting a <strong>multi-account AWS landing zone</strong> across <strong>5+ accounts</strong>
-                    and delivering reusable <strong>Python/Terraform tooling</strong> plus a custom CI base image
-                    adopted in <strong>15+ pipelines</strong>, reducing provisioning time by <strong>50%</strong>.
-                </li>
-                <li>Standardised platform delivery with modular <strong>GitLab CI/CD templates</strong> and reusable
-                    Kubernetes manifests, cutting onboarding from <strong>2 days to 2 hours</strong> and significantly
-                    reducing configuration drift.
-                </li>
-                <li>Automated end-to-end <strong>infrastructure provisioning and release pipelines</strong> for
-                    ML/data workloads using <strong>Terraform, AWS Lambda, Step Functions, and GitLab CI/CD</strong>,
-                    enabling repeatable releases and reducing operational overhead by <strong>40%</strong>.
-                </li>
-                <li>Engineered a production <strong>GenAI platform</strong> with <strong>AWS Bedrock Agents</strong>
-                    and Python Lambda integrations, delivering <strong>5+ automation workflows</strong> (including
-                    knowledge-base and data-querying agents) fully managed through CI/CD and IaC.
-                </li>
-                <li>Enforced cloud security and data governance through <strong>AWS Lake Formation</strong>,
-                    <strong>Access Analyzer</strong>, automated <strong>IAM access key rotation</strong> via
-                    Secrets Manager, and <strong>Checkov</strong> scanning in CI pipelines — strengthening compliance
-                    posture and reducing policy creation time by <strong>70%</strong>.
-                </li>
-                <li>Built and operated full-stack <strong>observability</strong> (Grafana, Prometheus,
-                    CloudWatch) and an automated <strong>data quality validation engine</strong>, cutting mean
-                    time to detect incidents by <strong>20 minutes</strong> and improving platform reliability
-                    by <strong>40%</strong>.
-                </li>
-                <li>Mentored <strong>4+ engineers</strong> across international locations, drove Agile/Scrum
-                    ceremonies, and established DevOps best practices that accelerated team autonomy and
-                    reduced dependency on senior engineers.
-                </li>
+                <li>Architected and own the cloud platform for an enterprise <strong>ML/AI Data Analytics
+                    Platform</strong> spanning <strong>5 AWS accounts</strong> and serving <strong>12+ ML and
+                    data project teams</strong>. Built a reusable <strong>Python/Terraform module library</strong>
+                    and custom CI base image that became the default starting point for all new projects.
+                    This cut setup time from <strong>~2 weeks to 3 days</strong> and eliminated repeated
+                    scaffolding across the organisation.</li>
+                <li>Co-designed and engineered a production <strong>GenAI platform using AWS Bedrock Agents</strong>,
+                    working directly with compliance officers, HR business partners, and data engineers to
+                    translate business requirements into <strong>5+ intelligent workflows</strong> including a
+                    regulatory compliance bot and an HR knowledge assistant, fully governed via IaC and CI/CD.
+                    One of the earliest production Bedrock Agents deployments in a large European automotive company.</li>
+                <li>Made platform delivery self-service by writing modular <strong>GitLab CI/CD templates</strong>
+                    and reusable Kubernetes manifests aligned with requirements from teams across
+                    <strong>Germany, India, and the US</strong>. New engineers run their first pipeline
+                    on day one, and teams deploy to production without opening a single platform-team ticket.</li>
+                <li>Automated the full ML workload lifecycle using <strong>Terraform, Step Functions,
+                    Lambda, and GitLab CI/CD</strong>, closely coordinating with data engineers and ML
+                    scientists to ensure pipelines matched real operational patterns, reducing
+                    recurring manual release work from <strong>~6 hours/week to near-zero</strong> across
+                    the platform team.</li>
+                <li>Partnered with the security team to establish a <strong>compliant-by-default</strong>
+                    delivery process via <strong>AWS Lake Formation</strong>, Access Analyzer, automated
+                    IAM key rotation (Secrets Manager), and <strong>Checkov</strong> scanning in every
+                    CI pipeline. This cut new-project IAM setup from <strong>~3 hours to under 45 minutes</strong>
+                    and removed the need for manual pre-deploy security reviews.</li>
+                <li>Built platform-wide <strong>observability</strong> (Grafana, Prometheus, CloudWatch)
+                    and an automated data quality validation engine; worked with data engineers to define
+                    meaningful alert thresholds rather than arbitrary ones. Average incident detection dropped from
+                    <strong>~35 minutes to under 15</strong>, and unplanned maintenance windows reduced
+                    by roughly <strong>2–3 per quarter</strong>.</li>
+                <li>Onboarded and mentored <strong>4 engineers</strong> joining from Germany and India;
+                    wrote onboarding runbooks that let each person make their first production infrastructure
+                    change within their first week. Also ran fortnightly Agile retrospectives and
+                    cross-timezone syncs that the team consistently rated as the most useful meetings
+                    of their week.</li>
             </ul>
         </div>
 
         <div class="contract-roles no-break">
             <div class="job-header">
-                <span class="job-title">Platform/DevOps Engineer – Contract & Working Student Roles</span>
+                <span class="job-title">Platform / DevOps Engineer – Contract &amp; Working Student</span>
                 <span class="job-date">Oct 2021 – Mar 2023</span>
             </div>
-            <p class="contract-intro">Gained hands-on experience in cloud infrastructure, CI/CD, and observability
-                across multiple tech environments on short-term contracts and working student engagements.</p>
+            <p class="contract-intro">Four consecutive engagements across enterprise tech stacks before
+                committing to platform engineering full-time. Each engagement was deliberately chosen to add
+                a different layer: CI/CD internals, IaC governance, provisioning automation, and observability.</p>
 
             <div class="contract-role">
-                <div class="contract-role-header">Adobe Systems, Hamburg (Feb 2023 – Mar 2023)</div>
+                <div class="contract-role-header">Adobe Systems &nbsp;·&nbsp; Hamburg &nbsp;(Feb – Mar 2023)</div>
                 <ul>
-                    <li>Customized Jenkins pipelines with JCasc and throttle plugins, reducing pipeline conflicts by
-                        <strong>60%</strong> across multi-tenant environments and saving <strong>15–20 developer
-                            hours</strong> weekly.
-                    </li>
+                    <li>Diagnosed and fixed chronic Jenkins build contention that was blocking
+                        <strong>~8 development teams</strong> in a shared multi-tenant environment. Implemented
+                        JCasc configuration-as-code and throttle plugins. Pipeline conflicts dropped by roughly
+                        <strong>60%</strong>, saving teams an estimated <strong>15–20 hours/week</strong>
+                        in idle wait time without requiring any workflow changes from the teams themselves.</li>
                 </ul>
             </div>
 
             <div class="contract-role">
-                <div class="contract-role-header">Staffbase, Chemnitz (Nov 2022 – Jan 2023)</div>
+                <div class="contract-role-header">Staffbase &nbsp;·&nbsp; Chemnitz &nbsp;(Nov 2022 – Jan 2023)</div>
                 <ul>
-                    <li>Managed GitHub repositories as code using Terraform and optimized Go-based dependency
-                        management, ensuring consistent and compliant source control across teams.</li>
-                    <li>Automated CI/CD workflows using <strong>GitHub Actions</strong> to enforce code quality checks
-                        and streamline deployment processes, ensuring high standards.</li>
+                    <li>Worked with engineering leads across multiple product teams to replace ad-hoc GitHub
+                        repository administration with <strong>Terraform-managed config</strong> and automated
+                        quality gates via <strong>GitHub Actions</strong>. Repository settings, branch
+                        protections, and access controls became version-controlled, consistent, and auditable
+                        across the organisation.</li>
                 </ul>
             </div>
 
             <div class="contract-role">
-                <div class="contract-role-header">Brose, Bamberg (Aug 2022 – Oct 2022)</div>
+                <div class="contract-role-header">Brose Fahrzeugteile &nbsp;·&nbsp; Bamberg &nbsp;(Aug – Oct 2022)</div>
                 <ul>
-                    <li>Developed CI/CD pipelines with custom templates and automated infrastructure provisioning with
-                        Terraform and configuration management with Ansible for in-house data analytics platform.</li>
+                    <li>Built the initial CI/CD pipelines and Terraform/Ansible provisioning layer for the
+                        data analytics platform; collaborated closely with the data engineering lead to
+                        understand the deployment model, which directly shaped the reusable module library
+                        built in the full-time role that followed. The quality of that work led to being
+                        offered a permanent position.</li>
                 </ul>
             </div>
 
             <div class="contract-role">
-                <div class="contract-role-header">Docufy, Bamberg (Oct 2021 – Aug 2022)</div>
+                <div class="contract-role-header">Docufy &nbsp;·&nbsp; Bamberg &nbsp;(Oct 2021 – Aug 2022)</div>
                 <ul>
-                    <li>Established governance framework for Azure DevOps CI/CD pipelines, automating IAM provisioning
-                        using Keycloak realms and Terraform for secure multi-tenant environments.</li>
-                    <li>Implemented Jaeger tracing and Prometheus sidecar agents in Kubernetes-based microservices,
-                        enabling real-time metrics streaming to Grafana for <strong>30+ services</strong>.</li>
+                    <li>Partnered with the backend and DevOps teams to instrument <strong>30+ Kubernetes
+                        microservices</strong> with Jaeger distributed tracing and Prometheus sidecar
+                        metrics. Built shared Grafana dashboards used daily by developers and SREs;
+                        also automated multi-tenant IAM provisioning via Keycloak + Terraform, cutting
+                        new-tenant setup from a <strong>manual 2-day process to under 2 hours</strong>.</li>
                 </ul>
             </div>
         </div>
     </section>
 
+    <!-- ══ EDUCATION ══ -->
     <section>
         <h2>Education</h2>
-        <div class="education-item">
-            <div class="education-header">
-                <span class="degree">Bachelor of Science in Computer Science</span>
-                <span class="job-date">Oct 2014 – Nov 2018</span>
-            </div>
-            <div class="institution">Government College University, Lahore, Pakistan</div>
+        <div class="education-header">
+            <span class="degree">B.Sc. Computer Science &nbsp;·&nbsp; Government College University, Lahore</span>
+            <span class="job-date">2014 – 2018</span>
+        </div>
+        <div style="font-size:9px; color:var(--muted); margin-top:3px;">
+            Relevant coursework: Database Management Systems &nbsp;·&nbsp; Artificial Intelligence &amp; Neural Networks
+            &nbsp;·&nbsp; Data Communication &amp; Networking &nbsp;·&nbsp; Data Warehousing
+            &nbsp;·&nbsp; Information Security &nbsp;·&nbsp; Object-Oriented Analysis &amp; Design
         </div>
     </section>
 
+    <!-- ══ CERTIFICATIONS ══ -->
     <section>
         <h2>Certifications</h2>
-        <ul class="cert-list">
-            <li>HashiCorp Certified: Terraform Associate (003)</li>
-            <li>AWS Certified Cloud Practitioner <em>(in progress, target: May 2026)</em></li>
-            <li>AWS Certified Solutions Architect – Associate <em>(in progress, target: Aug 2026)</em></li>
-            <li>AWS Certified DevOps Engineer – Professional <em>(in progress, target: Jan 2027)</em></li>
-        </ul>
+        <div class="cert-grid">
+            <span class="cert-earned">HashiCorp Certified: Terraform Associate (003)</span>
+            <span class="cert-progress">AWS Solutions Architect – Associate &nbsp;<em>(target: Aug 2026)</em></span>
+            <span class="cert-progress">AWS DevOps Engineer – Professional &nbsp;<em>(target: Jan 2027)</em></span>
+        </div>
     </section>
 
+    <!-- ══ LANGUAGES ══ -->
     <section>
         <h2>Languages</h2>
-        <p class="languages">English (Business Fluent) • German (A2, actively improving)</p>
+        <p class="languages">English: Business Fluent &nbsp;&nbsp;|&nbsp;&nbsp; German: A2 (actively improving)</p>
     </section>
 
 </body>
